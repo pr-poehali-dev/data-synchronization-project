@@ -259,12 +259,7 @@ export default function Index() {
       >
         {/* Hero Section */}
         <section className="relative flex min-h-screen w-screen shrink-0 flex-col justify-end px-6 pb-16 pt-24 md:px-12 md:pb-24">
-          <img
-            src="https://cdn.poehali.dev/projects/075f99fa-c4bc-4933-b10a-d721ba95f1d2/bucket/727e01da-4685-46e2-88f6-2108bcdbe10c.jpg"
-            alt="Специалист по сертификации"
-            className="pointer-events-none absolute right-0 top-8 hidden h-[55%] w-auto object-contain object-top opacity-90 md:block"
-            style={{ mixBlendMode: "luminosity", filter: "drop-shadow(-8px 0px 24px rgba(0,0,0,0.7))" }}
-          />
+
           <div className="max-w-3xl">
             <div className="mb-4 inline-block animate-in fade-in slide-in-from-bottom-4 rounded-full border border-foreground/20 bg-foreground/15 px-4 py-1.5 backdrop-blur-md duration-700">
               <p className="font-mono text-xs text-foreground/90">Центр сертификации нового поколения</p>
