@@ -253,7 +253,7 @@ export default function Index() {
 
         {/* Mobile: hamburger + CTA */}
         <div className="flex items-center gap-3 md:hidden">
-          <MagneticButton variant="secondary" size="sm" onClick={() => scrollToSection(4)}>
+          <MagneticButton variant="secondary" onClick={() => scrollToSection(4)}>
             Начать
           </MagneticButton>
           <button
