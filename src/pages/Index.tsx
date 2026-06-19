@@ -236,20 +236,32 @@ export default function Index() {
         {/* Desktop nav */}
         <div className="hidden items-center gap-8 md:flex">
           {navItems.map((item, index) => (
-            <button
-              key={item}
-              onClick={() => scrollToSection(index)}
-              className={`group relative font-sans text-sm font-medium transition-colors ${
-                currentSection === index ? "text-foreground" : "text-foreground/80 hover:text-foreground"
-              }`}
-            >
-              {item}
-              <span
-                className={`absolute -bottom-1 left-0 h-px bg-foreground transition-all duration-300 ${
-                  currentSection === index ? "w-full" : "w-0 group-hover:w-full"
+            <>
+              <button
+                key={item}
+                onClick={() => scrollToSection(index)}
+                className={`group relative font-sans text-sm font-medium transition-colors ${
+                  currentSection === index ? "text-foreground" : "text-foreground/80 hover:text-foreground"
                 }`}
-              />
-            </button>
+              >
+                {item}
+                <span
+                  className={`absolute -bottom-1 left-0 h-px bg-foreground transition-all duration-300 ${
+                    currentSection === index ? "w-full" : "w-0 group-hover:w-full"
+                  }`}
+                />
+              </button>
+              {index === 1 && (
+                <button
+                  key="employees"
+                  onClick={() => navigate("/employees")}
+                  className="group relative font-sans text-sm font-medium text-foreground/80 transition-colors hover:text-foreground"
+                >
+                  Сотрудники
+                  <span className="absolute -bottom-1 left-0 h-px w-0 bg-foreground transition-all duration-300 group-hover:w-full" />
+                </button>
+              )}
+            </>
           ))}
         </div>
 
@@ -267,13 +279,7 @@ export default function Index() {
         </div>
 
         {/* Desktop CTA */}
-        <div className="hidden items-center gap-4 md:flex">
-          <button
-            onClick={() => navigate("/employees")}
-            className="font-mono text-sm text-foreground/60 transition-colors hover:text-foreground"
-          >
-            Сотрудники
-          </button>
+        <div className="hidden md:block">
           <MagneticButton variant="secondary" onClick={() => scrollToSection(4)}>
             Начать
           </MagneticButton>
