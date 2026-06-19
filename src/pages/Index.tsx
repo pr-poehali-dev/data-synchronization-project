@@ -7,6 +7,7 @@ import { AboutSection } from "@/components/sections/about-section"
 import { ContactSection } from "@/components/sections/contact-section"
 import { MagneticButton } from "@/components/magnetic-button"
 import { useRef, useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import Icon from "@/components/ui/icon"
 
 export default function Index() {
@@ -14,6 +15,7 @@ export default function Index() {
   const [currentSection, setCurrentSection] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const navigate = useNavigate()
   const touchStartY = useRef(0)
   const touchStartX = useRef(0)
   const shaderContainerRef = useRef<HTMLDivElement>(null)
@@ -265,7 +267,13 @@ export default function Index() {
         </div>
 
         {/* Desktop CTA */}
-        <div className="hidden md:block">
+        <div className="hidden items-center gap-4 md:flex">
+          <button
+            onClick={() => navigate("/employees")}
+            className="font-mono text-sm text-foreground/60 transition-colors hover:text-foreground"
+          >
+            Сотрудники
+          </button>
           <MagneticButton variant="secondary" onClick={() => scrollToSection(4)}>
             Начать
           </MagneticButton>
@@ -287,6 +295,12 @@ export default function Index() {
                 {item}
               </button>
             ))}
+            <button
+              onClick={() => navigate("/employees")}
+              className="py-3 text-left font-sans text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
+            >
+              Сотрудники
+            </button>
           </div>
         </div>
       )}
